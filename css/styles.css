@@ -1,3 +1,140 @@
+/* REMOVING DEFAULT STYLES */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* Scrollbar styles from: https://codepen.io/stephenpaton-tech/full/JjRvGmY */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 0px;
+    border: 1px solid #ffffff;
+}
+
+
+/* BODY */
+body {
+    --scrollbar-width: calc(100vw - 100%);
+    margin: 0;
+}
+
+
+/* HEADER */
+header {
+    background-color: red;
+    width: calc(100vw - var(--scrollbar-width));
+    height: 8vh;
+}
+header > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    margin: auto;
+    width: 100%;
+}
+header>div>h1 {
+    width: 10%;
+    text-align: center;
+}
+
+/* NAVIGATION */
+nav {
+    width: 90%;
+    background-color: orange;
+    min-height: 8vh;
+    height: 8vh;
+    max-height: 8vh;
+}
+
+nav>ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: calc(100vw - var(--scrollbar-width));
+}
+
+nav>ul>a {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 200;
+    height: 100%;
+    width: 100%;
+    color: white;
+
+    /* Background animation */
+    /* https://stackoverflow.com/questions/20751937/transition-background-color-via-slide-animation */
+    transition: 1s;
+    background:
+        linear-gradient(white, white) no-repeat,
+        black;
+    background-size: 0% 0%;
+    background-position: center;
+}
+
+nav>ul>a:not(.flexBreak):hover {
+    background-size: 100% 100%;
+    color: black;
+}
+
+.selectedNavigation {
+    font-weight: 600;
+}
+
+/* MAIN */
+main {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 87vh;
+    min-height: 87vh;
+    width: calc(100vw - var(--scrollbar-width));
+}
+
+/* CONTENT */
 #qrcode-container img {
     max-width: 70vw;
     max-height: 70vh;
@@ -14,26 +151,8 @@
     align-content: center;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    width: 98vw;
-    height: 8vh;
-}
-
-header > h1 {
-    text-decoration: underline;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    height: 90vh;
-    min-height: 90vh;
-    width: 98vw;
+/* FOOTER */
+footer {
+    height: 5vh;
+    background-color: green;
 }

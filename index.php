@@ -1,4 +1,5 @@
-<?PHP 
+<?PHP
+session_start();
 
 ?>
 
@@ -15,8 +16,20 @@
 
 	<body>
 		<header>
-			<h1>QR Code</h1>
+				<div>
+				<h1>QR Code</h1>
+					
+				<nav>
+					<ul>
+						<a href="simple-qr.php"><li><h2>Simple QR</h2></li></a>
+						<a href="qr-redirect.php"><li><h2>QR Redirect</h2></li></a>
+						<li class="flexBreak"></li>
+						<a href="administration.php"><li><h2>Administration</h2></li></a>
+					</ul>
+				</nav>
+			</div>
 		</header>
+
 
 		<main>
 			<div id="qrcode-container"><img/></div>
@@ -24,7 +37,7 @@
 		</main>
 		
 		<footer>
-
+			Created by Jadin Heaston
 		</footer>
 	</body>
 
