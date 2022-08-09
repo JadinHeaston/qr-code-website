@@ -104,12 +104,13 @@ nav>ul>a {
 
     /* Background animation */
     /* https://stackoverflow.com/questions/20751937/transition-background-color-via-slide-animation */
-    transition: 1s;
+    /* transition: background-size color 1s; */
+    transition-duration: .25s;
     background:
         linear-gradient(white, white) no-repeat,
         black;
-    background-size: 0% 0%;
-    background-position: center;
+    background-size: 100% 0%;
+    background-position: bottom;
 }
 
 nav>ul>a:not(.flexBreak):hover {
@@ -124,14 +125,19 @@ nav>ul>a:not(.flexBreak):hover {
 /* MAIN */
 main {
     background-color: yellow;
+    height: 87vh;
+    min-height: 87vh;
+    width: calc(100vw - var(--scrollbar-width));
+}
+
+main > #mainContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     align-content: center;
-    height: 87vh;
-    min-height: 87vh;
-    width: calc(100vw - var(--scrollbar-width));
+    width: 100%;
+    height: 100%;
 }
 
 /* CONTENT */
