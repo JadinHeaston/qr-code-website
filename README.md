@@ -23,6 +23,12 @@ Installation and configuration of the required software is out of scope. Below a
     - You can also define the theme on ```line 38``` by entering the path to a ```.css``` file.
 5. TBD
 
+## Usage
+
+All QR Codes follow the pattern of ```<DOMAIN>/QR/<DESIRED_PATH>```.  
+The ```/QR/``` is needed for PHP to know when a given request is meant to be redirected or not.  
+Any other request (that isn't a valid page of this site) will be immediately dropped.  
+
 ## Desired Features
 
 | Feature | Description | Status |

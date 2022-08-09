@@ -1,4 +1,27 @@
+/* Loading in fonts */
+@font-face {
+    /* https://www.fontspace.com/pixeloid-font-f69232 */
+    font-family: pixeloid;
+    src: url(fonts/pixeloid-font/PixeloidSans-nR3g1.ttf);
+}
+
+
 /* REMOVING DEFAULT STYLES */
+
+a {
+    color: inherit;
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 h1,
 h2,
 h3,
@@ -13,10 +36,6 @@ h6,
 .h6 {
     margin-top: 0;
     margin-bottom: 0;
-}
-
-a {
-    color: inherit;
 }
 
 
@@ -45,8 +64,16 @@ a {
 
 /* BODY */
 body {
+    font-family: pixeloid;
     --scrollbar-width: calc(100vw - 100%);
     margin: 0;
+}
+
+input[type="text"] {
+    font-size: 2em;
+    font-family: pixeloid;
+    background-color: none;
+    border: none;
 }
 
 
@@ -64,7 +91,7 @@ header > div {
     margin: auto;
     width: 100%;
 }
-header>div>h1 {
+header>div>a {
     width: 10%;
     text-align: center;
 }
@@ -104,7 +131,6 @@ nav>ul>a {
 
     /* Background animation */
     /* https://stackoverflow.com/questions/20751937/transition-background-color-via-slide-animation */
-    /* transition: background-size color 1s; */
     transition-duration: .25s;
     background:
         linear-gradient(white, white) no-repeat,
@@ -124,7 +150,7 @@ nav>ul>a:not(.flexBreak):hover {
 
 /* MAIN */
 main {
-    background-color: yellow;
+    background-color: #666666;
     height: 87vh;
     min-height: 87vh;
     width: calc(100vw - var(--scrollbar-width));
@@ -142,10 +168,14 @@ main > #mainContent {
 
 /* CONTENT */
 #qrcode-container img {
-    max-width: 70vw;
     max-height: 70vh;
-    width: 40vw;
-    height: 40vh;
+    height: 60vh;
+    transition: .5s;
+}
+
+#qrcode-container img:hover {
+    background-color: white;
+    cursor: pointer;
 }
 
 #qrcode-container {
@@ -160,5 +190,23 @@ main > #mainContent {
 /* FOOTER */
 footer {
     height: 5vh;
-    background-color: green;
+    background-color: black;
+    color: white;
+}
+
+
+/* Generally stying icon buttons */
+button.icon {
+    width: 60px;
+    height: 60px;
+}
+
+button.icon i {
+    width: 100%;
+    height: 100%;
+}
+
+button.icon > i > svg {
+    width: 100%;
+    height: 100%;
 }
